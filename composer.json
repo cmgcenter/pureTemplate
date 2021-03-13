@@ -1,7 +1,8 @@
 {
     "name": "cmgdevs/pure-template",
     "description": "Simple And Powerfull Template Render For Pure PHP Projects",
-    "type": "package",
+    "type": "library",
+    "keywords": ["php", "template", "render"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/cmgcenter/pureTemplate/issues",
@@ -13,7 +14,6 @@
             "email": "cristhofermartinezg@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "php": ">=7.1"
     }
