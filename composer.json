@@ -14,6 +14,9 @@
             "email": "cristhofermartinezg@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-0": {"CMGDevs\\PureTemplate\\": "src/"}
+    },
     "require": {
         "php": ">=7.1"
     }
