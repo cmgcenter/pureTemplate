@@ -17,7 +17,7 @@
     "autoload": {
         "psr-0": {"CMGDevs\\PureTemplate\\": "src/"}
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=7.1"
     }
