@@ -9,17 +9,18 @@
             "email": "cristhofermartinezg@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/catfan/Medoo/issues",
+        "source": "https://github.com/cmgcenter/pureTemplate"
+    },
     "minimum-stability": "stable",
+    "version": "1.0.0",
     "require": {
         "php": ">=7.1.0"
     },
     "autoload": {
-        "files": ["src/Pure.php"],
         "psr-4": {
             "CMGDevs\\PureTemplate\\": "/src"
         },
-        "classmap": [
-            "src/"
-        ]
     },
 }
