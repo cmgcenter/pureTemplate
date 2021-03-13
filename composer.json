@@ -18,7 +18,7 @@
         "psr-0": {"cmgcenter\\PureTemplate\\": "src/"}
     },
     "minimum-stability": "stable",
-    "version" "1.0.x",
+    "version": "1.0.0",
     "require": {
         "php": "^7.1||^8.0"
     }
