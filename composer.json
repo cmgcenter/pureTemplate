@@ -1,26 +1,17 @@
 {
-    "name": "martin/pure-template",
-    "description": "A Simple Template Render For CMGDevs Projects",
-    "type": "library",
+    "name": "cmgdevs/pure-template",
+    "description": "Simple And Powerfull Template Render For Pure PHP Projects",
+    "type": "package",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/cmgcenter/pureTemplate/issues",
+        "source": "https://github.com/cmgcenter/pureTemplate"
+    },
     "authors": [
         {
             "name": "garubostar",
             "email": "cristhofermartinezg@gmail.com"
         }
     ],
-    "support": {
-        "issues": "https://github.com/catfan/Medoo/issues",
-        "source": "https://github.com/cmgcenter/pureTemplate"
-    },
     "minimum-stability": "stable",
-    "version": "1.0.0",
-    "require": {
-        "php": ">=7.1.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "CMGDevs\\PureTemplate\\": "/src"
-        },
-    },
-}
+    "require": {}
