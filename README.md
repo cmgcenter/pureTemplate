@@ -26,11 +26,13 @@ View Wiki(https://github.com/cmgcenter/pureTemplate/wiki)
 # loop foreach
 `$names = ['ana'=>45, 'cris'=>100,'robert'=>34];`
 
+`
 { foreach ($names as key => $value): }
 <ul>
 	<li>{{$key}} - {{$value}}</li>
 </ul>
 { endforeach }
+`
 
 # output
 ana - 45
