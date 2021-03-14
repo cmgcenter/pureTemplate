@@ -18,12 +18,12 @@ Simple and Powerfull Template Render for Pure PHP Projects
 }`
 
 
-##Create a Layout Skeleton
+# Create a Layout Skeleton
 View Wiki(https://github.com/cmgcenter/pureTemplate/wiki)
 
 
-##How To Use
-# loop foreach
+# How To Use
+## loop foreach
 `$names = ['ana'=>45, 'cris'=>100,'robert'=>34];`
 
 `
@@ -34,7 +34,7 @@ View Wiki(https://github.com/cmgcenter/pureTemplate/wiki)
 { endforeach }
 `
 
-# output
+## output
 ana - 45
 cris - 100
 robert - 34
