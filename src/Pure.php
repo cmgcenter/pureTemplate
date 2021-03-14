@@ -1,27 +1,32 @@
-<?php 
+<?php namespace CMGDevs_PureTemplate;
 
-namespace CMGDevs\PureTemplate;
+require_once 'Template.php';
+require_once 'Json.php';
+require_once 'SiteMap.php';
 
-use \CMGDevs\PureTemplate\cTemplate;
-use \CMGDevs\PureTemplate\Json;
-use \CMGDevs\PureTemplate\SiteMap;
+use CMGDevs_PureTemplate\cTemplate;
+use CMGDevs_PureTemplate\Json;
+use CMGDevs_PureTemplate\SiteMap;
 
 class Pure extends cTemplate
 {
-
-	protected $currentTemplate = '';
-	static $blocks = array();
 	
 	function __construct($viewsPath, $LayoutPath, $cachePath)
 	{
-		$this->definePath($viewsPath, $LayoutPath);
+		$this->definePath($viewsPath, $LayoutPath, $cachePath);
 		return $this;
 	}
 
 	public function view($file, $data)
 	{
-		$file = $this->viewsPath.'/'.$file;
+		$file = $file.'.html';
 
+		if( !file_exists( $this->viewsPath.$file ) )
+		{
+			print_r($this->viewsPath.$file . ' No se Encontro');
+			die();
+		}
+		
 		$cached_file = $this->cache($file);
 
 	    extract($data, EXTR_SKIP);

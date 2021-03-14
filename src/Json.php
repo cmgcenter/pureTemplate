@@ -1,6 +1,6 @@
 <?php 
 
-namespace CMGDevs\PureTemplate;
+namespace CMGDevs_PureTemplate;
 
 class Json
 {

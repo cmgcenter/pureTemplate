@@ -1,6 +1,6 @@
 <?php 
 
-namespace CMGDevs\PureTemplate;
+namespace CMGDevs_PureTemplate;
 
 /**
  * 
@@ -10,6 +10,8 @@ class cTemplate
 	public $viewsPath = '';
 	public $LayoutPath = '';
 	public $cachePath = '';
+	public $cache_enabled = false;
+	public $blocks = array();
 
 	
 	function __construct()
@@ -51,7 +53,11 @@ class cTemplate
 
 	public function cache($file)
 	{
-	    $cached_file = $this->cache_path . str_replace(array('/', '.php'), array('_', ''), $file . '.htm');
+		//mkdir($this->cachePath, 0777, true);
+
+	    $cached_file = $this->cachePath . str_replace(array('/', '.html'), array('_', ''), $file . '.php');
+
+	    //print_r($cached_file); die();
 
 	    if (!$this->cache_enabled || !file_exists($cached_file) || filemtime($cached_file) < filemtime($file)) 
 	    {
@@ -60,14 +66,14 @@ class cTemplate
 	        file_put_contents($cached_file, '<?php class_exists(\'' . __CLASS__ . '\') or exit; ?>' . PHP_EOL . $code);
 	    }
 
-	    //file_put_contents(self::$cache_path.'cache.html', htmlspecialchars_decode($code));
+	    //file_put_contents(self::$cachePath.'cache.html', htmlspecialchars_decode($code));
 		
 		return $cached_file;
 	}
 
 	public function clearCache() 
 	{
-		foreach(glob($this->cache_path . '*') as $file) {
+		foreach(glob($this->cachePath . '*') as $file) {
 			unlink($file);
 		}
 	}
@@ -137,8 +143,22 @@ class cTemplate
 		return $code;
 	}
 
-	public function includeFiles($file) {
-		$code = file_get_contents($file);
+	public function includeFiles($file)
+	{
+		if( file_exists(  $this->LayoutPath.$file ) )
+		{
+			$code = file_get_contents( $this->LayoutPath.$file );
+		}
+		elseif( file_exists($this->viewsPath.$file) )
+		{
+			$code = file_get_contents( $this->viewsPath.$file );
+		}
+		else
+		{
+			$code = file_get_contents( $this->viewsPath.$file );
+		}
+
+		
 		preg_match_all('/{ ?(extends|include) ?\'?(.*?)\'? ?}/i', $code, $matches, PREG_SET_ORDER);
 		foreach ($matches as $value) {
 			$code = str_replace($value[0], $this->includeFiles($value[2]), $code);
