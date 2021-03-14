@@ -15,7 +15,7 @@
         }
     ],
     "autoload": {
-        "psr-0": {"CMGDevs\\PureTemplate\\": "src/"}
+        "psr-4": {"CMGDevs_PureTemplate\\": "src/"}
     },
     "minimum-stability": "stable",
     "version": "1.0.0",
