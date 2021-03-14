@@ -4,9 +4,9 @@ require_once 'Template.php';
 require_once 'Json.php';
 require_once 'SiteMap.php';
 
-use CMGDevs_PureTemplate\cTemplate;
-use CMGDevs_PureTemplate\Json;
-use CMGDevs_PureTemplate\SiteMap;
+use \CMGDevs_PureTemplate\cTemplate;
+use \CMGDevs_PureTemplate\Json;
+use \CMGDevs_PureTemplate\SiteMap;
 
 class Pure extends cTemplate
 {
@@ -35,7 +35,8 @@ class Pure extends cTemplate
 		if( isset( $_REQUEST['f'] ) && $_REQUEST['f'] == 'json')
 		{
 			//mostramos json
-			return $this->renderJSON();
+			$json = new Json($data);
+			return $json->renderJSON();
 		}
 
 		if(!headers_sent())
@@ -46,9 +47,11 @@ class Pure extends cTemplate
 	   	require $cached_file;
 	}
 
-	public function viewMap($data)
+	public function viewMap(array $data, $typeOfMap)
 	{
-		$this->renderSiteMap($data);
+		$map = new SiteMap($data, $typeOfMap);
+		$map->setCss('../xml.css');/*css opcional*/
+		return $map->renderSiteMap();
 	}
 
 

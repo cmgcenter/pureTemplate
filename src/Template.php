@@ -155,7 +155,14 @@ class cTemplate
 		}
 		else
 		{
-			$code = file_get_contents( $this->viewsPath.$file );
+			if( file_exists($this->viewsPath.$file) )
+			{
+				$code = file_get_contents( $this->viewsPath.$file );
+			}
+			else
+			{
+				die( $this->viewsPath.$file . ' No Se Encuenta ' );
+			}
 		}
 
 		

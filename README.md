@@ -9,7 +9,6 @@ Simple and Powerfull Template Render for Pure PHP Projects
 ## in index.php You must Add a function call view with 2 vars
 
 ```php
-<?php
 function view($file, $data)
 {
 	$viewPath = 'path/To/ViewFiles/'; 
@@ -18,7 +17,6 @@ function view($file, $data)
 	$template = new \CMGDevs_PureTemplate\Pure($viewPath, $layoutPath, $cachePath);
 	return $template->view($file, $data);
 }
-?>
 ```
 
 
@@ -30,7 +28,7 @@ View Wiki(https://github.com/cmgcenter/pureTemplate/wiki)
 ## loop foreach
 ```php
 <?php
-$names = ['ana'=>45, 'cris'=>100,'robert'=>34];
+$names = ['ana'=>45, 'cris'=>100,'robert'=>34];`
 ?>
 ```
 ```php

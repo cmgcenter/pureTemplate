@@ -12,7 +12,7 @@ class Json
 		return $this;
 	}
 
-	private static function renderJSON()
+	public function renderJSON()
 	{
 		/*no se necesita mostrar los asiguientes archivos*/
 		//unset(self::$data['css'], self::$data['font'], self::$data['js']);
